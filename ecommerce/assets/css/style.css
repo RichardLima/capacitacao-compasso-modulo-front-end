@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px; 
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* header */
+.main-header{
+    background: #5A2D82;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+.main-header .container-figure img{
+    float: left;
+    padding: 80px 150px 50px 100px;
+    width: 500px;
+    
+}
+
+.main-header .container-nav{
+    float: right;
+    color: #fff;
+    padding: 0 10% 0 0;
+    font-size: 19px;
+}
+
+.main-header .container-nav span{
+    margin-right: 40px;
+}
+
+.main-header .container-nav span:nth-last-child(){
+    margin: 0;
+}
+
+.main-header .container .search{
+    float: left;
+    padding-top: 8.5%;
+}
+
+.main-header .container .search .search-input{
+    width: 400%;
+    height: 50px;
+    border-radius: 15px;
+}
+
+/* header menu */
+.menu{
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+.menu .container-item{
+    padding: 0 50px;
+    list-style: none;
+}
+.menu .container-item .item{
+    float: left;
+    width: calc(100% / 8);
+    text-align: center;
+}
+
+.menu .container-item .item a{
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+}
