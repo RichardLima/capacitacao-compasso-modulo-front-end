@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 01 - 2</title>
+</head>
+<body>
+
+    <input type="text" id="txt_nome">
+
+    <a href="http://www.google.com.br"
+    onclick="return confirm('Você realmente deseja ser redirecionado para o Google?')">
+    Google</a>
+
+    <br><br>
+
+
+    <a href="http://www.compasso.com.br" id="linkcompasso">Compasso</a>
+
+    <script>
+
+
+        var $link_compasso = document.getElementById('linkcompasso');
+        //console.log($link_compasso);
+        //$link_compasso.innerHTML = "Testando o javascript";
+        var $input_nome = document.getElementById('txt_nome');
+
+
+        $link_compasso.onclick = function(){
+           //texto do link console.log($link_compasso.innerHTML);
+           //outra forma de pegar o texto do link console.log(this.innerHTML);
+           
+           $input_nome.value = this.innerHTML;
+        };
+
+        //focus e blur
+        $input_nome.onfocus = function(){
+            $input_nome.value = "Teste";
+        }
+        $input_nome.onblur = function(){
+            $input_nome.value = "";
+        }
+
+
+    </script>
+</body>
+</html>

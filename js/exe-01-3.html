@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 01 - 3</title>
+</head>
+<body>
+
+    <input type="text" id="input_nome">
+    <input type="text" id="input_nome2">
+    <a href="#" id="link">Clique!</a>
+    <p>Resultado = <span id="res"></span></p>
+
+    <script>
+    var $linkSoma = document.getElementById('link');
+    var $input_nome = document.getElementById('input_nome');
+    var $input_nome2 = document.getElementById('input_nome2');
+    var $res = document.getElementById('res');
+
+    $linkSoma.onclick = function(){
+        $res.innerHTML = parseFloat($input_nome.value) + parseFloat($input_nome2.value);
+        //return false;
+    }
+
+    </script>
+
+
+</body>
+</html>
