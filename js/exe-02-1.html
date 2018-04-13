@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container-resultado {
+            display: none;
+        }
+        .produto_resultado{
+            float: left;
+            width: calc(90% / 3);
+            text-align: center;
+            margin: 10px;
+            border: 2px solid purple;
+            border-radius: 15px;
+            text-transform: transition;
+        }
+
+        .produto_resultado img:hover{
+            -ms-transform: scale(1.2); /* IE 9 */
+            -webkit-transform: scale(1.2); /* Safari 3-8 */
+            transform: scale(1.2); 
+        }
+         .produto_resultado p{
+           font-size: 18px;
+        }
+        .produto_resultado h3{
+           font-size: 25px;
+           text-transform: uppercase;
+        }
+
+        .produto_resultado h4{
+           font-size: 22px;
+           text-transform: uppercase;
+           color: lightblue;
+        }
+        
+        .produto_resultado a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        img{
+            width: 300px;
+            height: 220px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="frm">
+        <input type="search" id="campo-busca">
+    </form>
+
+    <div id="container-resultado">
+        <h2>Resultado de busca</h2>
+        <div id="sugestoes-produtos"></div>
+        <div id="resultado-busca"></div>
+    </div>
+
+    <script>
+        //if( false ) {
+        // window.console = {};
+        // console.assert = console.clear = console.constructor = console.count = console.debug = console.dir = console.dirxml = console.error = console.group = console.groupCollapsed = console.groupEnd = console.info = console.log = console.markTimeline = console.profile = console.profileEnd = console.table = console.time = console.timeEnd = console.timeStamp = console.timeline = console.timelineEnd = console.trace = console.warn = function() { return false; };
+        //};
+
+        "use strict"; //obriga todas as variaveis
+        //console.log("teste");
+        var $debug = true;
+
+        var $campo_busca = document.getElementById('campo-busca');
+        var $container_resultado = document.getElementById('container-resultado');
+        var $sugestoes_produtos = document.getElementById('sugestoes-produtos');
+        var $resultado_busca = document.getElementById('resultado-busca');
+
+        //array de sugestoes de produto
+        var $ar_sugestoes_produtos = [
+            "Detergente",
+            "Cafe",
+            "Erva",
+            "Cerveja"
+        ];
+
+        //array de resultado de busca
+        var $ar_resultado_busca = [
+            {
+                "nome": "Computador Dell",
+                "descricao": "text text text text",
+                "img": "https://a-static.mlcdn.com.br/1500x1500/notebook-dell-inspiron-i15-7560-a10s-intel-core-i5-8gb-1tb-led-156-placa-de-video-4gb-windows-10/magazineluiza/217520300/eed864506f36fd30a9ff6dab827f8c73.jpg",
+                "link": "http://compasso.com.br",
+                "preco": 10.5
+            },
+            {
+                "nome": "Notebook HP",
+                "descricao": "other text",
+                "img": "https://a-static.mlcdn.com.br/1500x1500/notebook-dell-inspiron-i15-7560-a10s-intel-core-i5-8gb-1tb-led-156-placa-de-video-4gb-windows-10/magazineluiza/217520300/eed864506f36fd30a9ff6dab827f8c73.jpg",
+                "link": "http://compasso.com.br",
+                "preco": 29.5
+            },
+            {
+                "nome": "Notebook Asus",
+                "descricao": "the third text",
+                "img": "https://a-static.mlcdn.com.br/1500x1500/notebook-dell-inspiron-i15-7560-a10s-intel-core-i5-8gb-1tb-led-156-placa-de-video-4gb-windows-10/magazineluiza/217520300/eed864506f36fd30a9ff6dab827f8c73.jpg",
+                "link": "http://compasso.com.br",
+                "preco": 17.5
+            }
+        ];
+
+        cl($ar_resultado_busca);
+
+        function cl($msg) {
+            if ($debug) console.log($msg);
+        };
+
+        function renderizaSugestoes() {
+            var $retorno = "";
+
+            for(var $i = 0; $i < $ar_sugestoes_produtos.length; $i++) {
+                cl($ar_sugestoes_produtos[$i]);
+
+                $retorno += "<p>" + $ar_sugestoes_produtos[$i] + "</p>";
+            };
+            cl($retorno);
+            $sugestoes_produtos.innerHTML = $retorno;
+        };
+
+        function renderizaResultadoBusca(){
+            var $retorno = "";
+
+            for(var $i in $ar_resultado_busca){
+                $retorno += "<div class='produto_resultado'>"+
+                "<h3>" + $ar_resultado_busca[$i].nome+ "</h3>"+
+                "<img src='"+$ar_resultado_busca[$i].img+"'>"+
+                "<p>"+$ar_resultado_busca[$i].descricao+"</p>"+
+                "<h4>"+$ar_resultado_busca[$i].preco+"</h4>"+
+                "<a target='_blank' href='"+$ar_resultado_busca[$i].link+"'>Veja mais</a>" +
+                "</div>";
+            }
+
+            $resultado_busca.innerHTML = $retorno;
+        };
+
+        $campo_busca.onfocus = function () {
+            cl('Entrou no campo');
+            $container_resultado.style.display = "block";
+
+            if (this.value.length === 0) {
+                cl('exibe sugestoes esconde lista');
+                $sugestoes_produtos.style.display = "block";
+                $resultado_busca.style.display = "none";
+            } else {
+                cl('exibe lista esconde sugestoes');
+                $sugestoes_produtos.style.display = "none";
+                $resultado_busca.style.display = "block";
+            }
+        }
+
+        $campo_busca.onkeydown = function () {
+            cl('Entrou no campo');
+            $container_resultado.style.display = "block";
+
+            if (this.value.length === 0) {
+                cl('exibe sugestoes esconde lista');
+                $sugestoes_produtos.style.display = "block";
+                $resultado_busca.style.display = "none";
+            } else {
+                cl('exibe lista esconde sugestoes');
+                $sugestoes_produtos.style.display = "none";
+                $resultado_busca.style.display = "block";
+            }
+        }
+
+
+        $campo_busca.onblur = function () {
+            cl('Saiu do campo');
+            if (this.value.length === 0) 
+                $container_resultado.style.display = "none";
+        }
+
+        renderizaSugestoes();
+        renderizaResultadoBusca();
+    </script>
+</body>
+
+</html>
