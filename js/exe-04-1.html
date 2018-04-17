@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Consulta CEP</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Consulta CEP</h1>
+    <form>
+
+        <h3 id="aviso"></h3>
+        <label>
+            CEP: <input type="text" id="txt_cep" autofocus maxlength="9"><span class="hide"> Pesquisando...</span>
+        </label>
+        <br><br>
+        <label>
+            Logradouro: <input type="text" id="txt_logradouro" disabled>
+        </label>
+        <br><br>
+        <label>
+            Bairro: <input type="text" id="txt_bairro" disabled>
+        </label>
+        <br><br>
+        <label>
+            Localidade: <input type="text" id="txt_localidade" disabled>
+        </label>
+        <br><br>
+        <label>
+            UF: <input type="text" id="txt_uf" disabled>
+        </label>
+        <br><br>
+    </form>
+
+    <button type="submit" id="botao">Cadastrar</button>
+
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="script2.js"></script>
+</body>
+
+</html>
