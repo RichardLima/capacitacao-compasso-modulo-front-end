@@ -1,0 +1,245 @@
+/* Inicia a página com estes parametros*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 20px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* header cabeçalho */
+    .main-header {
+        background: #5a2d82;
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+    .main-header .container-header {
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    .main-header .container-header .container-figure {
+        float: left;
+        padding: 3% 10% 2% 5%;   
+    }
+    .main-header .container-header .container-figure img{
+        width: 200px; 
+        margin-left: 20%;
+    }
+
+    .main-header .container-header .container-nav {
+        float: right;
+        color: #fff;
+        padding: 0 9% 0 0;
+    }
+
+    .main-header .container-header .container-nav span {
+        margin-left: 50px;
+        cursor: pointer;
+    }
+
+    .main-header .container-header .container-nav span:nth-last-child() {
+        margin: 0;
+    }
+
+    .main-header .container-header .search {
+       width: calc(100% - 450px);
+       float: right;
+       margin-top: 2.5%;
+    }  
+
+    .main-header .container-header .search input {
+        width: 86%;
+        padding: 10px;
+        border-radius: 25px;
+        border: 2px solid #5a2d82;
+    }
+
+/* header menu */
+.menu{
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+.menu .container-item{
+    padding: 0 50px;
+    list-style: none;
+}
+.menu .container-item .item{
+    float: left;
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.menu .container-item .item a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase; 
+}
+
+/*fim do cabeçalho e do menu*/
+
+/* Body */
+
+.main-content{
+    float: left;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.main-content .main-section .container-figure2 img{
+    float: left;
+    padding: 50px 50px 50px 0;
+    cursor: pointer;
+}
+
+.main-content .main-section h2{
+    padding: 50px;
+    text-transform: uppercase;
+    text-align: center;    
+}
+
+.main-content .main-section p{
+    text-align: justify;
+    padding: 0 0 0 0;
+}
+.main-content2{
+    float: left;
+    width: calc(90% / 3);
+    margin: 0 32px 0 0;
+}
+
+.main-content2 .main-product{
+    padding-bottom: 50px;
+    
+}
+.title-product {
+    clear: both;
+}
+
+.title-product h2{
+    padding: 50px 0 0 0;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.main-content2 .main-product .container-figure3 img{
+    width: 250px;
+    
+}
+
+.main-content2 .main-product .container-figure3 img:hover{
+   -ms-transform: scale(1.4); /* IE 9 */
+    -webkit-transform: scale(1.4); /* Safari 3-8 */
+    transform: scale(1.4); 
+
+}
+
+.main-content2 .main-product .container-figure3{
+    padding: 50px 50px 50px 30px;
+}
+
+.main-content2 .main-product p{
+    padding: 0 50px 0 0;
+    text-align: center;
+    color: 	#00B2EE;
+}
+/* Fim do Body */
+
+.resultador_search{
+    background-color: white;
+    border: 2px solid black;
+    display: none;
+}
+
+
+/*Slider*/
+.sli{
+    margin: 7em 10em 5em 10em;
+}
+
+.slider{
+    width: 600px;
+    height: 100px;
+}
+
+
+.slider img{
+    width: 600px;
+    height: 300px;
+}
+
+/*Fim do Slider*/
+
+/* Inicio do Footer (rodapé)*/
+.div-footer{
+    float: left;
+    margin-right: 80px;
+    margin-left: 10px;
+    
+}
+
+.div-footer ul{
+     list-style: none;
+}
+
+.div-footer a{
+    text-decoration: none;
+     color: black;
+}
+
+.div-footer img{
+    width: 70px;
+    cursor: pointer;
+}
+
+.div-footer .footer-input input{
+    width: 120%;
+}
+
+.main-footer{
+    width: 100%;
+    float: left;
+    background-color: #E8E8E8;
+}
+
+.main-footer h3{
+    color: #5a2d82;
+    font-size: 25px;
+}
+.main-footer{
+    text-align: left;
+}
+
+.main-content3{
+    float: left;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+
+.main-footer .main-content3 .div-footer ul li{
+    position: relative;
+    left: -40px;
+}
+
+.main-footer .icon{
+    width: 60px;
+    margin-bottom: 6px;
+    margin-left: 7px;
+}
+
+.main-footer p{
+    text-align: center;
+
+}
+
+input:focus{
+    outline: none;
+
+}
+/*Fim do Footer (rodapé)*/
